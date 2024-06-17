@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- Với syntax bên dưới sẽ include trang main-layout vào trang này -->
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{main-layout.html}"
+>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Page</title>
+
+</head>
+<body>
+
+<div class="form p-3" layout:fragment="content">
+
+    <h3 class="main-title w-50 mb-5">Car Detail</h3>
+
+    <form action="/car"
+          method="post"
+          th:object="${carDto}"
+          class="w-100 d-flex flex-column align-items-center gap-4 mb-5 px-5">
+
+      <div class="w-75 d-flex justify-content-between align-items-start">
+        <label class="label">License Plate<span class="text-danger">&ast;</span></label>
+        <div class="input-item">
+          <input class="input w-100"
+                 type="text"
+                 placeholder="89A - 8989"
+                 th:field="${carDto.licensePlate}"
+          >
+          <p th:if="${#fields.hasErrors('licensePlate')}"
+             th:errorclass="text-danger"
+             th:errors="${carDto.licensePlate}"
+             class="text-error"
+          ></p>
+        </div>
+      </div>
+
+      <div class="w-75 d-flex justify-content-between align-items-start">
+        <label class="label">Repair Date<span class="text-danger">&ast;</span></label>
+        <div class="input-item">
+          <input class="input custom-date-input w-100"
+                  type="date"
+                  placeholder="dd/MM/yyyy"
+                  th:field="${carDto.repairDate}"
+
+          >
+          <p th:if="${#fields.hasErrors('repairDate')}"
+             th:errorclass="text-danger"
+             th:errors="${carDto.repairDate}"
+             class="text-error"
+          ></p>
+        </div>
+      </div>
+
+      <div class="w-75 d-flex justify-content-between align-items-start">
+        <label class="label">Customer Name<span class="text-danger">&ast;</span></label>
+        <div class="input-item">
+          <input class="input w-100"
+                  type="text"
+                  placeholder="Huy Tran"
+                  th:field="${carDto.customerName}"
+          >
+          <p th:if="${#fields.hasErrors('customerName')}"
+             th:errorclass="text-danger"
+             th:errors="${carDto.customerName}"
+             class="text-error"
+          ></p>
+        </div>
+      </div>
+
+      <div class="w-75 d-flex justify-content-between align-items-start">
+        <label class="label">Catalog</label>
+        <div class="input-item">
+          <input class="input w-100"
+               type="text"
+               placeholder="Catalog"
+               th:field="${carDto.catalogs}"
+        ></div>
+      </div>
+
+      <div class="w-75 d-flex justify-content-between align-items-center mb-5">
+        <label class="label">Car-maker</label>
+        <div class="input-item">
+          <input class="input w-100"
+               type="text"
+               placeholder="Car maker"
+               th:field="${carDto.carMaker}"
+        ></div>
+      </div>
+
+      <div class="w-100 d-flex justify-content-between align-items-center mt-5">
+        <button class="btn-submit btn btn btn-light"
+                type="submit"
+        >Save Car
+        </button>
+        <a class="btn-submit btn btn-secondary"
+           th:href="@{/accessory(licensePlate=${carDto.licensePlate},repairDate=${carDto.repairDate})}"
+           role="button"
+        >Accessory Detail
+        </a>
+      </div>
+    </form>
+
+    <div th:if="${error}" class="text-center">
+      <p class="text-danger fw-semibold">License Plate already exist, please try again</p>
+    </div>
+    <div th:if="${success}" class="text-center">
+    <p class="text-primary fw-semibold">Create Car Successfully</p>
+    </div>
+
+</div>
+
+</body>
+</html>

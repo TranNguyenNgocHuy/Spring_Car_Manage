@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{main-layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car List</title>
+</head>
+<body>
+    <div class="form p-3" layout:fragment="content">
+        <h4 class="main-title w-50 mb-5">Car List</h4>
+
+        <div th:else class="w-100 ">
+            <table class="table table-striped-columns">
+                <thead>
+                <tr class="table-info">
+                    <th>License Plate</th>
+                    <th>Repair Date</th>
+                    <th>Customer Name</th>
+                    <th>Catalogs</th>
+                    <th>Car Maker</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="car : ${cars}">
+                    <td th:text="${car.licensePlate}"></td>
+                    <td th:text="${car.repairDate}"></td>
+                    <td th:text="${car.customerName}"></td>
+                    <td th:text="${car.catalogs}"></td>
+                    <td th:text="${car.carMaker}"></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h6 th:if="${#lists.isEmpty(cars)}" class="w-100 text-center text-muted">Empty Car</h6>
+        </div>
+
+    </div>
+
+</body>
+</html>

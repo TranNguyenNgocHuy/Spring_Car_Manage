@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap");
+
+:root {
+  --body-background: #f8f9fa;
+
+  --white: #fff;
+  --gray-bold: #495057;
+  --gray-medium: #adb5bd;
+
+  --text-light: #dee2e6;
+  --text-bold: #495057;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+   font-family: "Poppins", sans-serif;
+}
+
+section {
+    background-color: var(--body-background);
+    color: var(--text-light);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.wrapper {
+    height: 100vh;
+    border: 1px solid black;
+}
+
+.header {
+    font-size: 20px;
+    font-weight: 500;
+    height: 100px;
+    border-radius: 10px;
+    background-color: var(--gray-bold);
+}
+
+.header-link {
+    color: var(--text-light);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar {
+    border-radius: 10px;
+    background-color: var(--gray-bold);
+    width: 30vw;
+}
+
+.main-layout {
+   border-radius: 10px;
+   background-color: var(--gray-medium);
+   width: 70vw;
+   color: var(--text-bold);
+}
+
+.footer{
+    font-size: 20px;
+    font-weight: 500;
+    height: 60px;
+    border-radius: 10px;
+    background-color: var(--gray-bold);
+}
+
+tr {
+    text-align: center;
+}
+
+td {
+   font-size: 20px;
+   color: var(--text-light);
+   text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-item {
+   height: 50px;
+}
+
+.side-item {
+   text-decoration: none;
+   font-size: 16px;
+   font-weight: 500;
+   color: var(--text-bold);
+   font-weight: 500;
+   font-size: 20px;
+}
+
+.form {
+    width: 70vw;
+    max-height: 100%;
+    overflow-y: auto;
+    background-color: var(--gray-medium);
+    border-radius: 10px;
+    color: var(--text-bold);
+}
+
+.input-item {
+    width: 65%;
+    height: 50px;
+}
+
+.label {
+    width: 180px;
+}
+
+.input {
+    height: 40px;
+    border-radius: 6px;
+    padding: 0 10px;
+    outline: none;
+    border: 0.5px solid var(--gray-border);
+    box-shadow: 1px 1px 3px 0px rgba(black);
+    font-size: 16px;
+}
+
+
+.text-error {
+   font-size: 12px;
+}
+
+.table{
+   border-radius: 10px;
+}
+
+.main-title {
+    margin-bottom: 30px;
+}
+
+.btn-submit {
+    height: 40px;
+    width: 160px;
+}
+
+

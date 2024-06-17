@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- Với syntax bên dưới sẽ include trang main-layout vào trang này -->
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{main-layout.html}"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+
+</head>
+<body>
+   <!-- Trang main-layout xài cặp thẻ html gì thì trang này phải xài cặp thẻ đó ngoài cùng
+        và đánh dấu bằng syntax layout:fragment="content"
+   -->
+    <div layout:fragment="content" >
+        <div class="h-100 d-flex justify-content-center align-items-center">
+            <h2>Welcome to Automotive Repair</h2>
+        </div>
+
+    </div>
+</body>
+</html>
